@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.list-properties {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 8px;
+    padding-top: 30px;
+}
+
+.list-properties .block-container {
+    flex: 0 0 100%;
+    display: flex;
+    padding: 8px;
+}
+
+.list-properties .block-container .block {
+    position: relative;
+    overflow: hidden;
+}
+
+.list-properties .block-container .block img {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+.list-properties .block-details {
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, .8);
+}
+
+.list-properties .block-container .block::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, .9), rgba(0, 0, 0, 0));
+}
+
+.list-properties .block-details {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    z-index: 2;
+}
+
+.list-properties .block-details .title {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.list-properties .block .actions {
+    position: absolute;
+    right: -100px;
+    left: -100px;
+    top: 10px;
+    z-index: 11;
+    transition: 0.4s;
+    opacity: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-properties .block:hover .actions {
+    right: 10px;
+    opacity: 1;
+    left: 10px;
+}
+
+.btn-default {
+    border: none;
+    background: #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .8);
+    padding: 8px 10px;
+    border-radius: 4px;
+}
+
+.link-default {
+    color: #000000;
+    font: bold;
+}
+
+.bar {
+    width: 100%;
+    height: 30px;
+    background-color: #000000;
+    color: #ff0000;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+    position: fixed;
+    z-index: 999;
+}
+
+@media (min-width: 500px) {
+    .list-properties .block-container {
+        flex: 0 0 50%;
+    }
+}
+
+@media (min-width: 768px) {
+    .list-properties .block-container {
+        flex: 0 0 25%;
+    }
+}
